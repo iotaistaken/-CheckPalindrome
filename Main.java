@@ -10,10 +10,12 @@ public class Main
 		int b = arr.length-1;
 		while (a<b )
 		{
-			if (!arr[a].equals(arr[b]))
+			if (!arr[a].compareTo(arr[b]))
 			{
 				return false;
 			}
+			a++;
+			b--;
 		}
 		return true;
 	}
@@ -21,8 +23,16 @@ public class Main
 	{
 		Scanner jk = new Scanner(System.in);
 		String[] io = jk.nextLine().split("");
-		System.out.print(check(io));			// Close the Scaanner
-												// Make the code CaseSensitive
-												// Print Yes and No
+		System.out.print(check(io));			
+		jk.close();
+		if (check(io))
+		{
+			System.out.println("YES");
+		}
+		else
+		{
+			System.out.println("NO");
+		}
+												
 	}
 }
