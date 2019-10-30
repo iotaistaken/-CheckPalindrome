@@ -19,6 +19,26 @@ public class Main
 		}
 		return true;
 	}
+	
+	// Recursive solution easier to write but may become computationally expensive than the above iterative solution
+	protected static boolean check(String[] arr)
+	{
+		if(arr.length()<2)
+		{
+			return true;
+		}
+		else
+		{
+			if(arr.charAt(0)!=arr.charAt(arr.length()-1))
+			{
+				return false;
+			}
+			else
+			{
+				return check(arr.substring(1,arr.length()-1))
+			}
+		}
+	}
 	public static void main(String[] args)
 	{
 		Scanner jk = new Scanner(System.in);
